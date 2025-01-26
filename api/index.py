@@ -27,7 +27,7 @@ class handler(BaseHTTPRequestHandler):
         df = pd.DataFrame(data)
         marks = [df[df["name"] == name].values[0][1] for name in names]
         result = {
-            "message": marks
+            "marks": marks
         }
         self.send_response(200)
         self.send_header('Content-type','application/json')
