@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import json
 
 app = Flask(__name__)
@@ -8,7 +8,6 @@ with open('tds.json','r') as f:
 
 @app.route('/')
 def home():
-    return {"hello"}
-
+    return render_template('home.html')
 if __name__ == "__main__":
     app.run()
